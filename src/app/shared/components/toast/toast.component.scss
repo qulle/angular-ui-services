@@ -1,0 +1,84 @@
+.app-toast {
+    cursor: pointer;
+    padding: 0.75rem 0.875rem;
+    border-radius: 4px;
+    box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
+    margin: 0 1rem 1rem 0;
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    min-width: 300px;
+    background-color: #3b4352;
+    border-left-style: solid;
+    border-left-width: 4px;
+
+    &:first-child {
+        margin-top: 1rem;
+    }
+
+    &__icon {
+        margin-right: 1rem;
+        display: flex;
+        margin-bottom: auto;
+    }
+
+    &__title {
+        color: #ffffff;
+        text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
+        margin: 0;
+    }
+
+    &__message {
+        color: #ffffff;
+        text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
+        margin: 0.25rem 0 0 0;
+
+        &:empty {
+            margin: 0;
+        }
+    }
+
+    &--info {
+        border-left-color: #0080c5;
+
+        .app-toast__icon {
+            background-color: #0080c5;
+        }
+    }
+
+    &--warning {
+        border-left-color: #fbbd02;
+
+        .app-toast__icon {
+            background-color: #fbbd02;
+        }
+    }
+
+    &--error {
+        border-left-color: #eb4542;
+
+        .app-toast__icon {
+            background-color: #eb4542;
+        }
+    }
+
+    &--success {
+        border-left-color: #007c70;
+
+        .app-toast__icon {
+            background-color: #007c70;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .app-toast {
+        max-width: 500px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .app-toast {
+        max-width: 340px;
+    }
+}

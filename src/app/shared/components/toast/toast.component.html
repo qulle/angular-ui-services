@@ -1,0 +1,14 @@
+<div class="app-toast app-animation--slide-in {{ options.type }}" (click)="onDeleteToast()">
+    <div class="app-toast__icon">
+        <svg
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg"></svg>
+    </div>
+    <div class="app-toast__info">
+        <h4 class="app-toast__title">{{ options.title }}</h4>
+        <p class="app-toast__message">{{ options.message }}</p>
+    </div>
+</div>

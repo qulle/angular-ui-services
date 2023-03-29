@@ -1,4 +1,4 @@
-# Angular UI Services
+# Angular Ui Services
 
 ## About
 Services for dynamically creating Dialog-, Modal- and Toast components.
@@ -14,12 +14,12 @@ To create a new Dialog, Modal or Toast, simply inject the target service in any 
 ```typescript
 class MyComponent {
     constructor(
-        private readonly dialog: UiDialogService
+        private readonly uiDialog: UiDialogService
     ) { }
 
     onAlertDialogClick(): void {
         // (1). Basic alert
-        const dialog = this.dialog.createAlertDialog({
+        const dialog = this.uiDialog.createAlertDialog({
             title: 'Title',
             content: 'Content'
         });
@@ -30,7 +30,7 @@ class MyComponent {
         }, 2000);
 
         // (3). All options and callbacks
-        const dialog = this.dialog.createAlertDialog({
+        const dialog = this.uiDialog.createAlertDialog({
             title: 'Title',
             content: 'Content',
             okButtonText: 'Got it!',
@@ -46,7 +46,7 @@ class MyComponent {
 
     onConfirmDialogClick(): void {
         // (1). Basic confirm
-        const dialog = this.dialog.createConfirmDialog({
+        const dialog = this.uiDialog.createConfirmDialog({
             title: 'Title',
             content: 'Content'
         });
@@ -57,7 +57,7 @@ class MyComponent {
         }, 2000);
 
         // (3). All options and callbacks
-        const dialog = this.dialog.createConfirmDialog({
+        const dialog = this.uiDialog.createConfirmDialog({
             title: 'Title',
             content: 'Content',
             yesButtonText: 'Go',
@@ -77,7 +77,7 @@ class MyComponent {
 
     onPromptDialogClick(): void {
         // (1). Basic prompt
-        const dialog = this.dialog.createPromptDialog({
+        const dialog = this.uiDialog.createPromptDialog({
             title: 'Title',
             content: 'Content'
         });
@@ -88,7 +88,7 @@ class MyComponent {
         }, 2000);
 
         // (3). All options and callbacks
-        const dialog = this.dialog.createPromptDialog({
+        const dialog = this.uiDialog.createPromptDialog({
             title: 'Title',
             content: 'Content',
             yesButtonText: 'Delete',
@@ -112,7 +112,7 @@ class MyComponent {
 
     onSelectDialogClick(): void {
         // (1). Basic select
-        const dialog = this.dialog.createSelectDialog({
+        const dialog = this.uiDialog.createSelectDialog({
             title: 'Title',
             content: 'Content'
         });
@@ -123,7 +123,7 @@ class MyComponent {
         }, 2000);
 
         // (3). All options and callbacks
-        const dialog = this.dialog.createSelectDialog({
+        const dialog = this.uiDialog.createSelectDialog({
             title: 'Title',
             content: 'Content',
             yesButtonText: 'Delete',
@@ -164,12 +164,12 @@ class MyComponent {
 ```typescript
 class MyComponent {
     constructor(
-        private readonly modal: UiModalService
+        private readonly uiModal: UiModalService
     ) { }
 
     onModalTestClick(): void {
         // (1). Basic modal
-        const modal = this.modal.createModal({
+        const modal = this.uiModal.createModal({
             title: 'Title', 
             content: 'Content'
         });
@@ -180,7 +180,7 @@ class MyComponent {
         }, 2000);
 
         // (3). All options and callbacks
-        const modal = this.modal.createModal({
+        const modal = this.uiModal.createModal({
             title: 'Title', 
             content: 'Content/HTML',
             clickBackdropToClose: true,
@@ -203,12 +203,12 @@ class MyComponent {
 ```typescript
 class MyComponent {
     constructor(
-        private readonly toast: UiToastService
+        private readonly uiToast: UiToastService
     ) { }
 
     onToastTestClick(): void {
         // (1). Basic toast
-        const toast = this.toast.createInfoToast({
+        const toast = this.uiToast.createInfoToast({
             title: 'Title'
         });
 
@@ -218,7 +218,7 @@ class MyComponent {
         }, 2000);
 
         // (3). All options and callbacks
-        const toast = this.toast.createInfoToast({
+        const toast = this.uiToast.createInfoToast({
             title: 'Title', 
             message: 'Detailed content',
             onClose: () => {
@@ -227,19 +227,19 @@ class MyComponent {
         });
 
         // (4). Different styles available
-        const infoToast = this.toast.createInfoToast({ 
+        const infoToast = this.uiToast.createInfoToast({ 
             title: 'Title' 
         });
 
-        const successToast = this.toast.createSuccessToast({ 
+        const successToast = this.uiToast.createSuccessToast({ 
             title: 'Title' 
         });
 
-        const warningToast = this.toast.createWarningToast({ 
+        const warningToast = this.uiToast.createWarningToast({ 
             title: 'Title' 
         });
 
-        const errorToast = this.toast.createErrorToast({ 
+        const errorToast = this.uiToast.createErrorToast({ 
             title: 'Title' 
         });
     }

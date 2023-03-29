@@ -1,1 +1,23 @@
-Angular UI Services
+<div class="app" #appContainerRef>
+    <h1 class="app__header">Angular Ui Services</h1>
+
+    <div class="app__section">
+        <h3 class="app__header">Dialogs</h3>
+        <button class="app-button app-button--primary" (click)="onCreateAlertDialog()">
+            Alert dialog
+        </button>
+        <button class="app-button app-button--primary" (click)="onCreateConfirmDialog()">
+            Confirm dialog
+        </button>
+        <button class="app-button app-button--primary" (click)="onCreatePromptDialog()">
+            Prompt dialog
+        </button>
+        <button class="app-button app-button--primary" (click)="onCreateSelectDialog()">
+            Select dialog
+        </button>
+    </div>
+
+    <div class="app__toast-container">
+        <ng-template #appToastContainerRef></ng-template>
+    </div>
+</div>

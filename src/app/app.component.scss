@@ -1,0 +1,23 @@
+.app {
+    height: 100%;
+    padding: 1rem;
+
+    &__header {
+        margin: 0 0 1rem 0;
+    }
+
+    &__section {
+        .app-button {
+            display: inline-block;
+            margin-right: 1rem;
+        }
+    }
+
+    &__toast-container {
+        overflow-y: scroll;
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        max-height: 100%;
+    }
+}

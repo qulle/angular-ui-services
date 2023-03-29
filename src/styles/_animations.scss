@@ -1,5 +1,15 @@
-.app-animation--bounce {
-    animation: app-bounce 250ms forwards;
+.app-animation {
+    &--bounce {
+        animation: app-bounce 250ms forwards;
+    }
+
+    &--slide-in {
+        animation: app-slide-in 250ms forwards;
+    }
+
+    &--slide-out {
+        animation: app-slide-out 250ms forwards;
+    }
 }
 
 @keyframes app-bounce {
@@ -13,5 +23,25 @@
 
     100% {
         transform: scale(1);
+    }
+}
+
+@keyframes app-slide-in {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes app-slide-out {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(100%);
     }
 }

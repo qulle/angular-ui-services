@@ -190,9 +190,9 @@ class MyComponent {
         });
 
         // (4). Load components in the modal
-        const component = MyComplexDeviationComponent;
-        this.modal.createModal({
-            title: 'Deviation report',
+        const component = MyComplexComponent;
+        this.uiModal.createModal({
+            title: 'Complex component',
             component: component,
         });
     }

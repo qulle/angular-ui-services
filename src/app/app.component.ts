@@ -1,4 +1,5 @@
 import { AfterViewInit, Component, ViewChild, ViewContainerRef } from '@angular/core';
+import { ComplexModalComponentComponent } from './components/complex-modal-component/complex-modal-component.component';
 import { UiDialogService } from './shared/services/ui-dialog/ui-dialog.service';
 import { UiModalService } from './shared/services/ui-modal/ui-modal.service';
 import { UiToastService } from './shared/services/ui-toast/ui-toast.service';
@@ -130,5 +131,64 @@ export class AppComponent implements AfterViewInit {
 
     // 2. Modals
 
+    onCreateSimpleModal(): void {
+        const modal = this.uiModal.createModal({
+            title: 'Simple modal',
+            content: 'This is a <strong>simple</strong> modal window',
+            clickBackdropToClose: false,
+            onClose: () => {
+                console.log('Modal closed');
+            },
+        });
+    }
+
+    onCreateComplexModal(): void {
+        const component = ComplexModalComponentComponent;
+        this.uiModal.createModal({
+            title: 'Complex modal',
+            component: component,
+        });
+    }
+
     // 3. Toasts
+
+    onCreateInfoToast(): void {
+        const toast = this.uiToast.createInfoToast({
+            title: 'Info',
+            message: 'This is a information toast',
+            onClose: () => {
+                console.log('Toast closed');
+            },
+        });
+    }
+
+    onCreateSuccessToast(): void {
+        const toast = this.uiToast.createSuccessToast({
+            title: 'Info',
+            message: 'This is a success toast',
+            onClose: () => {
+                console.log('Toast closed');
+            },
+        });
+    }
+
+    onCreateWarningToast(): void {
+        const toast = this.uiToast.createWarningToast({
+            title: 'Info',
+            message: 'This is a warning toast',
+            onClose: () => {
+                console.log('Toast closed');
+            },
+        });
+    }
+
+    onCreateErrorToast(): void {
+        const toast = this.uiToast.createErrorToast({
+            title: 'Info',
+            message: 'This is a error toast',
+            onClose: () => {
+                console.log('Toast closed');
+            },
+        });
+    }
 }

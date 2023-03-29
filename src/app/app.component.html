@@ -17,6 +17,32 @@
         </button>
     </div>
 
+    <div class="app__section">
+        <h3 class="app__header">Modals</h3>
+        <button class="app-button app-button--primary" (click)="onCreateSimpleModal()">
+            Simple Modal
+        </button>
+        <button class="app-button app-button--primary" (click)="onCreateComplexModal()">
+            Complex Modal
+        </button>
+    </div>
+
+    <div class="app__section">
+        <h3 class="app__header">Toasts</h3>
+        <button class="app-button app-button--primary" (click)="onCreateInfoToast()">
+            Information Toast
+        </button>
+        <button class="app-button app-button--primary" (click)="onCreateSuccessToast()">
+            Success Toast
+        </button>
+        <button class="app-button app-button--primary" (click)="onCreateWarningToast()">
+            Warning Toast
+        </button>
+        <button class="app-button app-button--primary" (click)="onCreateErrorToast()">
+            Error Toast
+        </button>
+    </div>
+
     <div class="app__toast-container">
         <ng-template #appToastContainerRef></ng-template>
     </div>

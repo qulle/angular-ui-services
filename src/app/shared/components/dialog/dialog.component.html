@@ -2,7 +2,7 @@
     class="app-dialog-backdrop app-thin-scrollbars"
     (click)="onBounceAnimation($event)"
     #dialogBackdropRef>
-    <div class="app-dialog app-animation--bounce" #dialogRef>
+    <div class="app-dialog app-animation--bounce" tabindex="-1" #dialogRef>
         <div class="app-dialog__header">
             <h2 class="app-dialog__title">{{ options.title }}</h2>
             <button

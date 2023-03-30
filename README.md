@@ -6,6 +6,8 @@ Services for dynamically creating Dialog-, Modal- and Toast components.
 ## Usage
 To create a new Dialog, Modal or Toast, simply inject the target service in any component or service. Use any of the code samples below and modify it to suit your needs. Advanced modal windows can be easily created in terms of both design and logic by providing the service with a reference to a standalone component that is constructed in the window.
 
+All the dialogs and modals uses trap focus and circles the tab-key to always stay in the opened frame.
+
 1. [Dialogs](#dialogs)
 2. [Modals](#modals)
 3. [Toasts](#toasts)
@@ -60,7 +62,7 @@ class MyComponent {
         const dialog = this.uiDialog.createConfirmDialog({
             title: 'Title',
             content: 'Content',
-            yesButtonText: 'Go',
+            yesButtonText: 'Confirm',
             cancelButtonText: 'Abort',
             isDanger: true,
             onClose: () => {

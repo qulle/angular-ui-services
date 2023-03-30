@@ -15,6 +15,7 @@
     border-radius: 4px;
     transition: border-color 150ms ease-in-out, box-shadow 150ms ease-in-out;
     outline: none;
+    resize: none;
 
     &:focus {
         border: 1px solid rgba(#87afe8, 0.5);

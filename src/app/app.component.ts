@@ -37,7 +37,7 @@ export class AppComponent implements AfterViewInit {
     // 1. Dialogs
 
     onCreateAlertDialog(): void {
-        const dialog = this.uiDialog.createAlertDialog({
+        this.uiDialog.createAlertDialog({
             title: 'Alert',
             content: 'This is a altert dialog',
             okButtonText: 'Got it!',
@@ -52,10 +52,10 @@ export class AppComponent implements AfterViewInit {
     }
 
     onCreateConfirmDialog(): void {
-        const dialog = this.uiDialog.createConfirmDialog({
+        this.uiDialog.createConfirmDialog({
             title: 'Confirm',
             content: 'This is a confirm dialog',
-            yesButtonText: 'Go!',
+            yesButtonText: 'Confirm',
             cancelButtonText: 'Abort',
             isDanger: false,
             onClose: () => {
@@ -71,7 +71,7 @@ export class AppComponent implements AfterViewInit {
     }
 
     onCreatePromptDialog(): void {
-        const dialog = this.uiDialog.createPromptDialog({
+        this.uiDialog.createPromptDialog({
             title: 'Prompt',
             content: 'This is a prompt dialog',
             yesButtonText: 'Set value',
@@ -94,7 +94,7 @@ export class AppComponent implements AfterViewInit {
     }
 
     onCreateSelectDialog(): void {
-        const dialog = this.uiDialog.createSelectDialog({
+        this.uiDialog.createSelectDialog({
             title: 'Select',
             content: 'This is a select dialog',
             yesButtonText: 'Set value',
@@ -132,7 +132,7 @@ export class AppComponent implements AfterViewInit {
     // 2. Modals
 
     onCreateSimpleModal(): void {
-        const modal = this.uiModal.createModal({
+        this.uiModal.createModal({
             title: 'Simple modal',
             content: 'This is a <strong>simple</strong> modal window',
             clickBackdropToClose: false,
@@ -153,7 +153,7 @@ export class AppComponent implements AfterViewInit {
     // 3. Toasts
 
     onCreateInfoToast(): void {
-        const toast = this.uiToast.createInfoToast({
+        this.uiToast.createInfoToast({
             title: 'Info',
             message: 'This is a information toast',
             onClose: () => {
@@ -163,8 +163,8 @@ export class AppComponent implements AfterViewInit {
     }
 
     onCreateSuccessToast(): void {
-        const toast = this.uiToast.createSuccessToast({
-            title: 'Info',
+        this.uiToast.createSuccessToast({
+            title: 'Success',
             message: 'This is a success toast',
             onClose: () => {
                 console.log('Toast closed');
@@ -173,8 +173,8 @@ export class AppComponent implements AfterViewInit {
     }
 
     onCreateWarningToast(): void {
-        const toast = this.uiToast.createWarningToast({
-            title: 'Info',
+        this.uiToast.createWarningToast({
+            title: 'Warning',
             message: 'This is a warning toast',
             onClose: () => {
                 console.log('Toast closed');
@@ -183,8 +183,8 @@ export class AppComponent implements AfterViewInit {
     }
 
     onCreateErrorToast(): void {
-        const toast = this.uiToast.createErrorToast({
-            title: 'Info',
+        this.uiToast.createErrorToast({
+            title: 'Error',
             message: 'This is a error toast',
             onClose: () => {
                 console.log('Toast closed');

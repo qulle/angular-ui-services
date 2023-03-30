@@ -8,6 +8,7 @@ import {
     ViewEncapsulation,
     ChangeDetectorRef,
 } from '@angular/core';
+import { trapFocus } from '../../services/helpers/TrapFocus';
 import { DefaultModalOptions } from '../../services/ui-modal/defaults/modal-options.default';
 import { ModalOptions } from '../../services/ui-modal/models/modal-options.model';
 
@@ -36,7 +37,7 @@ export class ModalComponent implements AfterViewInit {
         this.options = structuredClone(DefaultModalOptions);
     }
 
-    private isModal(element: HTMLDivElement): boolean {
+    private isSelf(element: HTMLDivElement): boolean {
         return this.modalRef.nativeElement !== element.firstElementChild;
     }
 
@@ -58,6 +59,9 @@ export class ModalComponent implements AfterViewInit {
             this.viewContainerRef.createComponent(component);
         }
 
+        this.modalRef.nativeElement.focus();
+        this.modalRef.nativeElement.addEventListener('keydown', trapFocus);
+
         // Important: Re-evaluate the component change-detection
         // This is done because of Error: NG100: ExpressionChangedAfterItHasBeenCheckedError
         this.changeDetectorRef.detectChanges();
@@ -74,7 +78,7 @@ export class ModalComponent implements AfterViewInit {
     onBounceAnimation(event: MouseEvent): void {
         const element = <HTMLDivElement>event.target;
 
-        if (this.isModal(element)) {
+        if (this.isSelf(element)) {
             return;
         }
 

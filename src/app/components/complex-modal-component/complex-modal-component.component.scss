@@ -1,0 +1,21 @@
+.complex-modal {
+    &__item {
+        margin-top: 1rem;
+
+        &:first-child {
+            margin: 0;
+        }
+    }
+
+    &__label {
+        display: inline-block;
+        margin-bottom: 0.5rem;
+    }
+
+    &__buttons {
+        margin-top: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}

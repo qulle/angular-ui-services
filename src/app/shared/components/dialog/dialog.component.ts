@@ -1,4 +1,5 @@
-import { Component, ComponentRef, ElementRef, ViewChild } from '@angular/core';
+import { Component, ComponentRef, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
+import { trapFocus } from '../../services/helpers/TrapFocus';
 import { DefaultDialogOptions } from '../../services/ui-dialog/defaults/dialog-options.default';
 import { DialogOptions } from '../../services/ui-dialog/models/dialog-options.model';
 
@@ -7,7 +8,7 @@ import { DialogOptions } from '../../services/ui-dialog/models/dialog-options.mo
     templateUrl: './dialog.component.html',
     styleUrls: ['./dialog.component.scss'],
 })
-export class DialogComponent {
+export class DialogComponent implements AfterViewInit {
     options: DialogOptions;
     self!: ComponentRef<DialogComponent>;
 
@@ -21,7 +22,12 @@ export class DialogComponent {
         this.options = structuredClone(DefaultDialogOptions);
     }
 
-    private isDialog(element: HTMLDivElement): boolean {
+    ngAfterViewInit(): void {
+        this.dialogRef.nativeElement.focus();
+        this.dialogRef.nativeElement.addEventListener('keydown', trapFocus);
+    }
+
+    private isSelf(element: HTMLDivElement): boolean {
         return this.dialogRef.nativeElement !== element.firstElementChild;
     }
 
@@ -90,7 +96,7 @@ export class DialogComponent {
     onBounceAnimation(event: MouseEvent): void {
         const element = <HTMLDivElement>event.target;
 
-        if (this.isDialog(element)) {
+        if (this.isSelf(element)) {
             return;
         }
 

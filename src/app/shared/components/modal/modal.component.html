@@ -2,7 +2,7 @@
     class="app-modal-backdrop app-thin-scrollbars"
     (click)="onBounceAnimation($event)"
     #modalBackdropRef>
-    <div class="app-modal app-animation--bounce" #modalRef>
+    <div class="app-modal app-animation--bounce" tabindex="-1" #modalRef>
         <div class="app-modal__header">
             <h2 class="app-modal__title">{{ options.title }}</h2>
             <button

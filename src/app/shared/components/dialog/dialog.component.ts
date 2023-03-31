@@ -42,7 +42,7 @@ export class DialogComponent implements AfterViewInit {
     onCloseButtonClick(): void {
         this.deleteDialog();
 
-        if (this.options.onClose && this.options.onClose instanceof Function) {
+        if (this.options.onClose) {
             this.options.onClose();
         }
     }
@@ -51,7 +51,7 @@ export class DialogComponent implements AfterViewInit {
         const target = <HTMLInputElement>event.target;
         this.options.value = target.value;
 
-        if (this.options.onValueChange && this.options.onValueChange instanceof Function) {
+        if (this.options.onValueChange) {
             this.options.onValueChange(target.value);
         }
     }
@@ -60,7 +60,7 @@ export class DialogComponent implements AfterViewInit {
         const target = <HTMLInputElement>event.target;
         this.options.value = target.value;
 
-        if (this.options.onSelectChange && this.options.onSelectChange instanceof Function) {
+        if (this.options.onSelectChange) {
             this.options.onSelectChange(target.value);
         }
     }
@@ -68,7 +68,7 @@ export class DialogComponent implements AfterViewInit {
     onOkButtonClick(): void {
         this.deleteDialog();
 
-        if (this.options.onOk && this.options.onOk instanceof Function) {
+        if (this.options.onOk) {
             this.options.onOk();
         }
     }
@@ -76,7 +76,7 @@ export class DialogComponent implements AfterViewInit {
     onYesButtonClick(): void {
         this.deleteDialog();
 
-        if (this.options.onYes && this.options.onYes instanceof Function) {
+        if (this.options.onYes) {
             if (this.options.isPrompt || this.options.isSelect) {
                 this.options.onYes(this.options.value);
             } else {
@@ -88,7 +88,7 @@ export class DialogComponent implements AfterViewInit {
     onCancelButtonClick(): void {
         this.deleteDialog();
 
-        if (this.options.onCancel && this.options.onCancel instanceof Function) {
+        if (this.options.onCancel) {
             this.options.onCancel();
         }
     }

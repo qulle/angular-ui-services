@@ -29,7 +29,7 @@ export class ToastComponent {
         window.setTimeout(() => {
             this.self.destroy();
 
-            if (this.options.onClose && this.options.onClose instanceof Function) {
+            if (this.options.onClose) {
                 this.options.onClose();
             }
         }, 250);

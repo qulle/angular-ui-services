@@ -48,7 +48,7 @@ export class ModalComponent implements AfterViewInit {
     deleteModal(): void {
         this.self.destroy();
 
-        if (this.options.onClose && this.options.onClose instanceof Function) {
+        if (this.options.onClose) {
             this.options.onClose();
         }
     }
@@ -70,7 +70,7 @@ export class ModalComponent implements AfterViewInit {
     onCloseButtonClick(): void {
         this.deleteModal();
 
-        if (this.options.onClose && this.options.onClose instanceof Function) {
+        if (this.options.onClose) {
             this.options.onClose();
         }
     }

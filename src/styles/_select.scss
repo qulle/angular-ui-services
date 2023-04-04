@@ -1,8 +1,6 @@
 .app-select {
     margin: 1rem 0;
     display: block;
-    width: 100%;
-    width: 100%;
     padding: 0.5rem 2.25rem 0.5rem 0.5rem;
     font-size: 1.125rem;
     font-weight: 400;
@@ -20,6 +18,10 @@
     appearance: none;
     word-wrap: normal;
     outline: none;
+
+    &--full-bleed {
+        width: 100%;
+    }
 
     &:focus {
         border: 1px solid rgba(#87afe8, 0.5);

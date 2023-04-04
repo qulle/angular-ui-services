@@ -1,6 +1,5 @@
 .app-input {
     display: block;
-    width: 100%;
     padding: 0.375rem 0.75rem;
     font-size: 1rem;
     font-weight: 400;
@@ -16,6 +15,10 @@
     transition: border-color 150ms ease-in-out, box-shadow 150ms ease-in-out;
     outline: none;
     resize: none;
+
+    &--full-bleed {
+        width: 100%;
+    }
 
     &:focus {
         border: 1px solid rgba(#87afe8, 0.5);

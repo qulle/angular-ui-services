@@ -21,7 +21,10 @@
         </div>
         <div class="app-dialog__content" [innerHTML]="options.content"></div>
         <div class="app-dialog__actions">
-            <select *ngIf="options.isSelect" class="app-select" (input)="onSelectChange($event)">
+            <select
+                *ngIf="options.isSelect"
+                class="app-select app-select--full-bleed"
+                (input)="onSelectChange($event)">
                 <ng-container *ngFor="let option of options.options">
                     <option value="{{ option.value }}" [selected]="option.value === options.value">
                         {{ option.key }}
@@ -31,7 +34,7 @@
             <input
                 *ngIf="options.isPrompt"
                 type="text"
-                class="app-input"
+                class="app-input app-input--full-bleed"
                 value="{{ options.value }}"
                 placeholder="Enter value"
                 style="margin-bottom: 1rem"

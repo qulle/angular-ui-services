@@ -29,6 +29,7 @@ export class UiDialogService {
         dialogRef.instance.options.title = options.title;
         dialogRef.instance.options.content = options.content;
         dialogRef.instance.options.value = options.value;
+        dialogRef.instance.options.placeholder = options.placeholder;
         dialogRef.instance.options.okButtonText = options.okButtonText;
         dialogRef.instance.options.yesButtonText = options.yesButtonText;
         dialogRef.instance.options.cancelButtonText = options.cancelButtonText;

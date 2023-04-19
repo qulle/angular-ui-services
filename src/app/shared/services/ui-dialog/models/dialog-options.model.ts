@@ -10,6 +10,7 @@ export interface DialogOptions {
     title: string;
     content: string;
     value: string;
+    placeholder: string;
     okButtonText: string;
     yesButtonText: string;
     cancelButtonText: string;

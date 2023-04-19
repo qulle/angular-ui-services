@@ -1,4 +1,11 @@
-import { Component, ComponentRef, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
+import {
+    Component,
+    ComponentRef,
+    ElementRef,
+    ViewChild,
+    OnInit,
+    AfterViewInit,
+} from '@angular/core';
 import { trapFocus } from '../../services/helpers/TrapFocus';
 import { DefaultDialogOptions } from '../../services/ui-dialog/defaults/dialog-options.default';
 import { DialogOptions } from '../../services/ui-dialog/models/dialog-options.model';
@@ -8,7 +15,7 @@ import { DialogOptions } from '../../services/ui-dialog/models/dialog-options.mo
     templateUrl: './dialog.component.html',
     styleUrls: ['./dialog.component.scss'],
 })
-export class DialogComponent implements AfterViewInit {
+export class DialogComponent implements OnInit, AfterViewInit {
     options: DialogOptions;
     self!: ComponentRef<DialogComponent>;
 
@@ -20,6 +27,13 @@ export class DialogComponent implements AfterViewInit {
 
     constructor() {
         this.options = structuredClone(DefaultDialogOptions);
+    }
+
+    ngOnInit(): void {
+        // If no specific value was given, select the first item
+        if (this.options.options.length > 0 && this.options.value.length <= 0) {
+            this.options.value = this.options.options[0].value;
+        }
     }
 
     ngAfterViewInit(): void {
@@ -51,8 +65,8 @@ export class DialogComponent implements AfterViewInit {
         const target = <HTMLInputElement>event.target;
         this.options.value = target.value;
 
-        if (this.options.onValueChange) {
-            this.options.onValueChange(target.value);
+        if (this.options.onValueChange && target.value.trim().length > 0) {
+            this.options.onValueChange(target.value.trim());
         }
     }
 
@@ -61,7 +75,7 @@ export class DialogComponent implements AfterViewInit {
         this.options.value = target.value;
 
         if (this.options.onSelectChange) {
-            this.options.onSelectChange(target.value);
+            this.options.onSelectChange(target.value.trim());
         }
     }
 
@@ -77,8 +91,11 @@ export class DialogComponent implements AfterViewInit {
         this.deleteDialog();
 
         if (this.options.onYes) {
-            if (this.options.isPrompt || this.options.isSelect) {
-                this.options.onYes(this.options.value);
+            if (
+                (this.options.isPrompt || this.options.isSelect) &&
+                this.options.value.trim().length > 0
+            ) {
+                this.options.onYes(this.options.value.trim());
             } else {
                 this.options.onYes();
             }

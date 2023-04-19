@@ -77,6 +77,7 @@ export class AppComponent implements AfterViewInit {
             yesButtonText: 'Set value',
             cancelButtonText: 'Abort',
             value: '1234',
+            placeholder: 'Enter value',
             isDanger: false,
             onClose: () => {
                 console.log('Dialog closed');
@@ -99,6 +100,7 @@ export class AppComponent implements AfterViewInit {
             content: 'This is a select dialog',
             yesButtonText: 'Set value',
             cancelButtonText: 'Abort',
+            value: 'Value 2',
             options: [
                 {
                     key: 'Option 1',

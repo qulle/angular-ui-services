@@ -96,6 +96,7 @@ class MyComponent {
             yesButtonText: 'Delete',
             cancelButtonText: 'Abort',
             value: '1234',
+            placeholder: 'Enter value',
             isDanger: true,
             onClose: () => {
                 console.log('Dialog closed');
@@ -130,6 +131,7 @@ class MyComponent {
             content: 'Content',
             yesButtonText: 'Delete',
             cancelButtonText: 'Abort',
+            value: 'Value 2',
             options: [
                 {
                     key: 'Option 1',

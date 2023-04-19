@@ -10,6 +10,7 @@ export const DefaultDialogOptions: DialogOptions = {
     title: 'Default title',
     content: 'Default content',
     value: '',
+    placeholder: '',
     okButtonText: 'Ok',
     yesButtonText: 'Yes',
     cancelButtonText: 'Cancel',

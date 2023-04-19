@@ -24,9 +24,10 @@
             <select
                 *ngIf="options.isSelect"
                 class="app-select app-select--full-bleed"
-                (input)="onSelectChange($event)">
+                [(ngModel)]="options.value"
+                (change)="onSelectChange($event)">
                 <ng-container *ngFor="let option of options.options">
-                    <option value="{{ option.value }}" [selected]="option.value === options.value">
+                    <option value="{{ option.value }}">
                         {{ option.key }}
                     </option>
                 </ng-container>
@@ -36,11 +37,21 @@
                 type="text"
                 class="app-input app-input--full-bleed"
                 value="{{ options.value }}"
-                placeholder="Enter value"
+                placeholder="{{ options.placeholder }}"
                 style="margin-bottom: 1rem"
+                [(ngModel)]="options.value"
                 (input)="onValueChange($event)" />
             <button
-                *ngIf="options.isConfirm || options.isPrompt || options.isSelect"
+                *ngIf="options.isPrompt"
+                type="button"
+                class="app-button app-button--medium"
+                [ngClass]="options.isDanger ? 'app-button--danger' : 'app-button--primary'"
+                [disabled]="!options.value || options.value.trim().length <= 0"
+                (click)="onYesButtonClick()">
+                {{ options.yesButtonText }}
+            </button>
+            <button
+                *ngIf="options.isConfirm || options.isSelect"
                 type="button"
                 class="app-button app-button--medium"
                 [ngClass]="options.isDanger ? 'app-button--danger' : 'app-button--primary'"

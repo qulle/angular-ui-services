@@ -65,8 +65,8 @@ export class DialogComponent implements OnInit, AfterViewInit {
         const target = <HTMLInputElement>event.target;
         this.options.value = target.value;
 
-        if (this.options.onValueChange && target.value.trim().length > 0) {
-            this.options.onValueChange(target.value.trim());
+        if (this.options.onValueChange && this.options.value.trim().length > 0) {
+            this.options.onValueChange(this.options.value.trim());
         }
     }
 
@@ -74,8 +74,8 @@ export class DialogComponent implements OnInit, AfterViewInit {
         const target = <HTMLInputElement>event.target;
         this.options.value = target.value;
 
-        if (this.options.onSelectChange) {
-            this.options.onSelectChange(target.value.trim());
+        if (this.options.onSelectChange && this.options.value.trim().length > 0) {
+            this.options.onSelectChange(this.options.value.trim());
         }
     }
 

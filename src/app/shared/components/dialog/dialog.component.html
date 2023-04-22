@@ -42,7 +42,7 @@
                 [(ngModel)]="options.value"
                 (input)="onValueChange($event)" />
             <button
-                *ngIf="options.isPrompt"
+                *ngIf="options.isPrompt || options.isSelect"
                 type="button"
                 class="app-button app-button--medium"
                 [ngClass]="options.isDanger ? 'app-button--danger' : 'app-button--primary'"
@@ -51,7 +51,7 @@
                 {{ options.yesButtonText }}
             </button>
             <button
-                *ngIf="options.isConfirm || options.isSelect"
+                *ngIf="options.isConfirm"
                 type="button"
                 class="app-button app-button--medium"
                 [ngClass]="options.isDanger ? 'app-button--danger' : 'app-button--primary'"

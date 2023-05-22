@@ -194,7 +194,7 @@ class MyComponent {
         });
 
         // (4). Load components in the modal
-        const component = ComplexModalComponentComponent;
+        const component = ComplexModalComponent;
         this.uiModal.createModal({
             title: 'Complex component',
             component: component,

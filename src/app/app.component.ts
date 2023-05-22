@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, ViewChild, ViewContainerRef } from '@angular/core';
-import { ComplexModalComponentComponent } from './components/complex-modal-component/complex-modal-component.component';
+import { ComplexModalComponent } from './components/complex-modal/complex-modal.component';
 import { UiDialogService } from './shared/services/ui-dialog/ui-dialog.service';
 import { UiModalService } from './shared/services/ui-modal/ui-modal.service';
 import { UiToastService } from './shared/services/ui-toast/ui-toast.service';
@@ -145,7 +145,7 @@ export class AppComponent implements AfterViewInit {
     }
 
     onCreateComplexModal(): void {
-        const component = ComplexModalComponentComponent;
+        const component = ComplexModalComponent;
         this.uiModal.createModal({
             title: 'Complex modal',
             component: component,

@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { ToastComponent } from './shared/components/toast/toast.component';
 import { ModalComponent } from './shared/components/modal/modal.component';
 import { DialogComponent } from './shared/components/dialog/dialog.component';
-import { ComplexModalComponentComponent } from './components/complex-modal-component/complex-modal-component.component';
+import { ComplexModalComponent } from './components/complex-modal/complex-modal.component';
 
 @NgModule({
     declarations: [
@@ -15,7 +15,7 @@ import { ComplexModalComponentComponent } from './components/complex-modal-compo
         ToastComponent,
         ModalComponent,
         DialogComponent,
-        ComplexModalComponentComponent,
+        ComplexModalComponent,
     ],
     imports: [BrowserModule, AppRoutingModule, FormsModule],
     providers: [],
